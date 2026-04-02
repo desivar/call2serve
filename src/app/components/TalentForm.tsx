@@ -2,15 +2,13 @@
 import { useState } from 'react';
 
 export default function TalentForm() {
-  // 1. Create a state to hold the selected skills
+  // 1. State for selected skills
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
 
   const toggleSkill = (skill: string) => {
     if (selectedSkills.includes(skill)) {
-      // Remove it if it's already there
       setSelectedSkills(selectedSkills.filter(s => s !== skill));
     } else {
-      // Add it if it's new
       setSelectedSkills([...selectedSkills, skill]);
     }
   };
@@ -21,9 +19,7 @@ export default function TalentForm() {
       <p className="text-slate-500 mb-8">This information helps the Mission President assign your service role.</p>
 
       <form className="space-y-6">
-        {/* ... University Major (Same as your code) ... */}
-
-        {/* Skill Selection */}
+        {/* Skill Selection Section */}
         <div>
           <label className="block text-sm font-bold text-slate-800 mb-2 uppercase tracking-wider">
             Technical Skills
@@ -36,11 +32,12 @@ export default function TalentForm() {
                   key={skill}
                   type="button"
                   onClick={() => toggleSkill(skill)}
-             >     className={`px-4 py-2 rounded-full border-2 transition-all font-bold text-xs ${
-  isSelected 
-    ? "bg-turquoise border-turquoise text-white shadow-md" 
-    : "border-turquoise text-turquoise hover:bg-slate-50"
-}`}
+                  className={`px-4 py-2 rounded-full border-2 transition-all font-bold text-xs ${
+                    isSelected 
+                      ? "bg-turquoise border-turquoise text-white shadow-md" 
+                      : "border-turquoise text-turquoise hover:bg-slate-50"
+                  }`}
+                >
                   {skill} {isSelected ? '✓' : '+'}
                 </button>
               );
@@ -48,11 +45,10 @@ export default function TalentForm() {
           </div>
         </div>
 
-        {/* ... Service Goal & Submit Button (Same as your code) ... */}
-        
+        {/* Submit Button using your Turquoise brand color */}
         <button 
           type="submit"
-          className="w-full py-4 bg-cyan-500 text-white rounded-2xl font-black text-lg hover:bg-cyan-600 shadow-lg shadow-cyan-100 transition-all active:scale-[0.98]"
+          className="w-full py-4 bg-turquoise text-white rounded-2xl font-black text-lg hover:brightness-110 shadow-lg shadow-cyan-100 transition-all active:scale-[0.98]"
         >
           Save Professional Profile
         </button>
