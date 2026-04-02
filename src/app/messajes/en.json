@@ -1,0 +1,11 @@
+{
+  "Common": {
+    "welcome": "Welcome",
+    "logout": "Sign Out"
+  },
+  "Dashboard": {
+    "budget": "Survival Budget",
+    "language": "Language Progress",
+    "companion": "Current Companion"
+  }
+}
