@@ -1,57 +1,41 @@
 "use client";
-import { useState, useRef } from 'react';
 
 export default function LanguageEvaluator() {
-  const [isRecording, setIsRecording] = useState(false);
-  const [recordings, setRecordings] = useState([
-    { date: "Jan 2026", level: "L1", url: "#" },
-    { date: "Feb 2026", level: "L1+", url: "#" }
-  ]);
-
-  // Web Audio API Logic
-  const startRecording = () => {
-    setIsRecording(true);
-    // navigator.mediaDevices.getUserMedia({ audio: true })...
-  };
-
-  const stopRecording = () => {
-    setIsRecording(false);
-    // Save to Cloudinary (Free Tier)
-  };
+  // Replace this URL with the link to the actual evaluation app
+  const externalAppUrl = "https://the-other-app.com";
 
   return (
-    <div className="p-6 bg-white min-h-screen pb-20">
-      <h1 className="text-2xl font-black text-slate-800 mb-2">Fluency Progress</h1>
-      <p className="text-sm text-slate-500 mb-8">Record your monthly "Check-in" to track your internship growth.</p>
+    <div className="p-6 bg-white min-h-screen">
+      <h1 className="text-2xl font-black text-slate-800 mb-2">Language Growth</h1>
+      <p className="text-sm text-slate-500 mb-8 italic">Complete your monthly fluency check-in using the official evaluation tool.</p>
 
-      {/* 1. The "Record" Button */}
-      <div className="flex flex-col items-center justify-center p-10 bg-blue-50 rounded-[40px] border-2 border-dashed border-blue-200 mb-8">
-        <button 
-          onMouseDown={startRecording}
-          onMouseUp={stopRecording}
-          className={`w-20 h-20 rounded-full flex items-center justify-center shadow-lg transition-all ${isRecording ? 'bg-red-500 scale-110' : 'bg-blue-600'}`}
-        >
-          <span className="text-white font-bold">{isRecording ? "STOP" : "REC"}</span>
-        </button>
-        <p className="mt-4 text-xs font-bold text-blue-600 uppercase tracking-widest">
-          {isRecording ? "Recording Voice Note..." : "Hold to record your monthly check-in"}
+      {/* The External Link Card */}
+      <div className="p-8 bg-cyan-50 rounded-[2rem] border-2 border-cyan-100 flex flex-col items-center text-center">
+        <div className="w-16 h-16 bg-cyan-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-cyan-200">
+          <span className="text-white text-2xl">🌐</span>
+        </div>
+        <h3 className="text-lg font-black text-cyan-900 mb-2">Fluency Evaluator</h3>
+        <p className="text-xs text-cyan-700 mb-6 px-4">
+          Click below to open the external recording app. Your results will be sent to the Mission President.
         </p>
+        
+        <a 
+          href={externalAppUrl}
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="w-full py-4 bg-cyan-500 text-white rounded-xl font-bold hover:bg-cyan-600 transition-all text-center shadow-md active:scale-95"
+        >
+          OPEN EXTERNAL APP
+        </a>
       </div>
 
-      {/* 2. The Progress Timeline */}
-      <div className="space-y-4">
-        <h3 className="font-bold text-slate-700">Audio History</h3>
-        {recordings.map((rec, index) => (
-          <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-100">
-            <div>
-              <p className="font-bold text-sm text-slate-800">{rec.date}</p>
-              <p className="text-[10px] text-blue-500 font-black uppercase">Level: {rec.level}</p>
-            </div>
-            <button className="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center text-blue-600">
-              ▶
-            </button>
-          </div>
-        ))}
+      {/* 2. Simple History Placeholder */}
+      <div className="mt-10 space-y-4">
+        <h3 className="font-bold text-slate-700 px-2">Recent Submissions</h3>
+        <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex justify-between items-center opacity-60">
+          <p className="text-sm font-bold">Check-in March 2026</p>
+          <span className="text-[10px] font-black text-green-600 bg-green-100 px-2 py-1 rounded-md">COMPLETED</span>
+        </div>
       </div>
     </div>
   );
