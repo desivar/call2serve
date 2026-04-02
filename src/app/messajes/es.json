@@ -1,0 +1,11 @@
+{
+  "Common": {
+    "welcome": "Bienvenido",
+    "logout": "Cerrar Sesión"
+  },
+  "Dashboard": {
+    "budget": "Presupuesto",
+    "language": "Progreso de Idioma",
+    "companion": "Compañero Actual"
+  }
+}
