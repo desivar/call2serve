@@ -36,12 +36,11 @@ export default function TalentForm() {
                   key={skill}
                   type="button"
                   onClick={() => toggleSkill(skill)}
-                  className={`px-4 py-2 rounded-full border-2 transition-all font-bold text-xs ${
-                    isSelected 
-                    ? "bg-cyan-500 border-cyan-500 text-white shadow-md" 
-                    : "border-cyan-500 text-cyan-600 hover:bg-cyan-50"
-                  }`}
-                >
+             >     className={`px-4 py-2 rounded-full border-2 transition-all font-bold text-xs ${
+  isSelected 
+    ? "bg-turquoise border-turquoise text-white shadow-md" 
+    : "border-turquoise text-turquoise hover:bg-slate-50"
+}`}
                   {skill} {isSelected ? '✓' : '+'}
                 </button>
               );
