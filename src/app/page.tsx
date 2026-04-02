@@ -6,7 +6,7 @@ export default function Home() {
           Call2Serve
         </h1>
         <p className="text-cyan-600 font-bold uppercase tracking-widest text-xs mb-8">
-          Professional Growth Incubator
+          Called to Serve
         </p>
         
         <div className="space-y-4">
