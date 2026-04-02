@@ -1,16 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // 1. Force Next.js to only look at your current folder
-  experimental: {
-    turbo: {
-      root: '.', 
-    },
+  // In Next.js 16+, 'turbo' is a top-level key, not inside 'experimental'
+  turbo: {
+    root: '.', 
   },
-  // 2. Disable Sentry if it's auto-injecting and causing the 429 loop
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  // To ignore ESLint during dev, we use this:
   eslint: {
     ignoreDuringBuilds: true,
   },
