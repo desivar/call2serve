@@ -8,8 +8,6 @@ const config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
         turquoise: "#06b6d4",
       },
     },
