@@ -1,20 +1,20 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
   content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        turquoise: {
-          light: "#ecfeff",
-          DEFAULT: "#06b6d4", 
-          dark: "#0891b2",
-        },
-        navy: "#0f172a",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        turquoise: "#06b6d4",
       },
     },
   },
   plugins: [],
-}
+};
+
+export default config;
